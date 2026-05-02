@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Urbanist', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg-dark text-white min-h-screen;
+    background: linear-gradient(135deg, #0A1A2F 0%, #1E2A44 100%);
+    background-attachment: fixed;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(78, 132, 196, 0.4) rgba(10, 26, 47, 0.2);
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: rgba(10, 26, 47, 0.2);
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: rgba(78, 132, 196, 0.4);
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(78, 132, 196, 0.6);
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(30, 42, 68, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(78, 132, 196, 0.15);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card {
+    background: rgba(30, 42, 68, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(78, 132, 196, 0.2);
+    border-radius: 16px;
+  }
+
+  .glass-input {
+    background: rgba(10, 26, 47, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(78, 132, 196, 0.25);
+    border-radius: 12px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .glass-input:focus {
+    border-color: rgba(78, 132, 196, 0.5);
+    box-shadow: 0 0 0 3px rgba(78, 132, 196, 0.1);
+    outline: none;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, #4E84C4 0%, #6B9FD4 100%);
+  }
+
+  .gradient-success {
+    background: linear-gradient(135deg, #54B948 0%, #6FCF64 100%);
+  }
+
+  .gradient-warning {
+    background: linear-gradient(135deg, #FBB034 0%, #FCC860 100%);
+  }
+
+  .gradient-critical {
+    background: linear-gradient(135deg, #F15A29 0%, #F47D5A 100%);
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, #0A1A2F 0%, #1E2A44 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #4E84C4 0%, #6B9FD4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
